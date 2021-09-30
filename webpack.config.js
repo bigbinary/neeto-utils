@@ -2,7 +2,9 @@ const PeerDepsExternalsPlugin = require("peer-deps-externals-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./lib/utils.js",
+  entry: {
+    index: "./lib/utils.js",
+  },
   module: {
     rules: [
       {
@@ -24,7 +26,7 @@ module.exports = {
   output: {
     path: __dirname + "/bundle",
     filename: "[name].js",
-    library: "neeto-utis",
+    library: "neeto-utils",
     libraryTarget: "umd",
   },
   plugins: [new PeerDepsExternalsPlugin()],

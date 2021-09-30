@@ -1,7 +1,7 @@
 {
   "name": "@bigbinary/neeto-utils",
   "version": "0.0.1",
-  "main": "/dist",
+  "main": "/bundle",
   "repository": "https://github.com/bigbinary/neeto-utils.git",
   "author": "BigBinary",
   "license": "MIT",
