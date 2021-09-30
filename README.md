@@ -17,7 +17,7 @@ yarn
 
 You can create new components in the `lib/components` and export them from `lib/index.js`.
 
-Running the `yarn start` command starts a CRA app which resides in `src` folder. Use this application to test out changes. Note that nothing in the `src` folder will be bundled with NeetoEditor.
+Running the `yarn start` command starts a CRA app which resides in `example` folder. Use this application to test out changes. Note that nothing in the `src` folder will be bundled with NeetoEditor.
 
 ## Building
 
