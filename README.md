@@ -23,7 +23,7 @@ Running the `yarn start` command starts a CRA app which resides in `src` folder.
 
 Running the `yarn build` command build a production bundle file.
 
-### Available utilities
+# Available utilities
 Utils 
 1. Slugify
 
