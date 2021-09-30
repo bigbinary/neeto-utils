@@ -12,16 +12,6 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        include: [path.resolve(__dirname, "example")],
-        use: [
-          {
-            loader: "babel-loader",
-          },
-        ],
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
         include: [path.resolve(__dirname, "lib")],
         use: [
           {
@@ -29,19 +19,13 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-          },
-        ],
-      },
     ],
   },
   output: {
     path: __dirname + "/bundle",
-    publicPath: "/",
+    filename: "[name].js",
+    library: "neeto-utis",
+    libraryTarget: "umd",
   },
   plugins: [new PeerDepsExternalsPlugin()],
 };

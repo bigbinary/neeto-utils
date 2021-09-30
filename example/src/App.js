@@ -1,12 +1,15 @@
 import React from "react";
+// import { Slugify } from "/bundle/main";
 import { Slugify } from "../../lib/utils";
 
 const App = () => {
   return (
     <div>
-      <h2>Neeto Utils</h2>
+      <h1>Neeto Utils</h1>
+      <h3>Slugify</h3>
       <p>
-        The slug for <strong>This is Neeto Utils</strong> is <strong>{Slugify("This is Neeto Utils")}</strong>
+        Input: <b>This is Neeto Utils</b><br/>
+        Output: <b>{Slugify("This is Neeto Utils")}</b>
       </p>
     </div>
   );
