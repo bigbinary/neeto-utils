@@ -1,8 +1,7 @@
 import React from "react";
-import utils from "../../lib/utils";
+import { Slugify } from "../../lib/utils";
 
 const App = () => {
-  const { Slugify } = utils;
   return (
     <div>
       <h2>Neeto Utils</h2>
