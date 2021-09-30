@@ -2890,6 +2890,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+peer-deps-externals-webpack-plugin@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/peer-deps-externals-webpack-plugin/-/peer-deps-externals-webpack-plugin-1.0.4.tgz#191e8f116c70401364dbd8e6c44ab3f8844101dc"
+  integrity sha512-MIZk2xvwUqd74rSIkbM4R/qTn182Hvb1gEOYIHwAqlqeRuSqn6QOGsd8NJLJRzwlMBnyjvMCs8JZH62+mQjb9g==
+
 picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.3:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.0.tgz#f1f061de8f6a4bf022892e2d128234fb98302972"

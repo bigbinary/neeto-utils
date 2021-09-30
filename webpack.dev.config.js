@@ -1,8 +1,12 @@
-const PeerDepsExternalsPlugin = require("peer-deps-externals-webpack-plugin");
 const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./lib/utils.js",
+  entry: "./example/src/index.js",
+  output: {
+    path: __dirname + "/dist",
+    publicPath: "/",
+  },
   module: {
     rules: [
       {
@@ -39,9 +43,10 @@ module.exports = {
       },
     ],
   },
-  output: {
-    path: __dirname + "/bundle",
-    publicPath: "/",
-  },
-  plugins: [new PeerDepsExternalsPlugin()],
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./example/index.html",
+      filename: "./index.html",
+    }),
+  ],
 };
