@@ -26,6 +26,7 @@ Running the `yarn build` command build a production bundle file.
 # Available utilities
 Utils 
 1. Slugify
+2. useOnClickOutside
 
 Hooks 
 1. useDebounce
