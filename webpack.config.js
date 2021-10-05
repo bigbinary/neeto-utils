@@ -4,6 +4,7 @@ const path = require("path");
 module.exports = {
   entry: {
     index: "./lib/utils.js",
+    hooks: "./lib/hooks/index.js"
   },
   module: {
     rules: [
