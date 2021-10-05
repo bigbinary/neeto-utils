@@ -28,6 +28,6 @@ Utils
 1. Slugify
 
 Hooks 
-1. useFetch (Todo)
-2. useDebounce (Todo)
+1. useDebounce
+2. useFetch (Todo)
 
