@@ -26,9 +26,13 @@ Running the `yarn build` command build a production bundle file.
 # Available utilities
 Utils 
 1. Slugify
+2. encode
+3. decode
+4. decodeExecutionResponse
 
 Hooks 
 1. useDebounce
 2. useOnClickOutside
-3. useFetch (Todo)
+3. useLocalStorage
+4. useFetch (Todo)
 
