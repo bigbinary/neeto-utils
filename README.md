@@ -1,4 +1,5 @@
 # NeetoUtils
+
 NeetoUtils is a utilities library that drives the experience in all Neeto products built at BigBinary.
 
 ## Installation
@@ -24,11 +25,33 @@ Running the `yarn start` command starts a CRA app which resides in `example` fol
 Running the `yarn build` command build a production bundle file.
 
 # Available utilities
-Utils 
-1. Slugify
 
-Hooks 
-1. useDebounce
-2. useOnClickOutside
-3. useFetch (Todo)
+## Utils
 
+### Slugify
+
+## Hooks
+
+### useDebounce
+
+### useOnClickOutside
+
+### useAxios
+
+`useAxios` is a custom react hook used to perform API requests. It helps reduce the duplication of the same code in the same file and across multiple files in a project.
+
+```js
+const {
+		request: createPost,
+		apiResponse: { data: id },
+		error: createError,
+		isLoading: createLoading,
+	} = useAxios(
+		{
+			method: "POST" // Any valid HTTP methid ,
+			url: "https://jsonplaceholder.typicode.com/posts" // A valid API endpoint,
+      headers: "" // Valid HTTP headers
+		},
+		""
+	);
+```

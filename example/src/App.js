@@ -13,23 +13,32 @@ const App = () => {
 
 	const {
 		request: getPosts,
-		apiResponse: { data: todos },
-		error: todosError,
-		loading: todosLoading,
-	} = useAxios([]);
+		apiResponse: { data: posts },
+		error: postsError,
+		isLoading: postsLoading,
+	} = useAxios(
+		{
+			method: "GET",
+			url: "https://jsonplaceholder.typicode.com/posts",
+		},
+		[]
+	);
 
 	const {
 		request: createPost,
 		apiResponse: { data: id },
 		error: createError,
-		loading: createLoading,
-	} = useAxios("");
-
-	const handleSubmit = () => {
-		createPost({
+		isLoading: createLoading,
+	} = useAxios(
+		{
 			method: "POST",
 			url: "https://jsonplaceholder.typicode.com/posts",
-		});
+		},
+		""
+	);
+
+	const handleSubmit = () => {
+		createPost();
 	};
 
 	useEffect(() => {
@@ -64,12 +73,7 @@ const App = () => {
 				output="Check console"
 			/>
 			<button
-				onClick={() =>
-					getPosts({
-						method: "GET",
-						url: "https://jsonplaceholder.typicode.com/posts",
-					})
-				}
+				onClick={() => getPosts()}
 				style={{
 					marginRight: "16px",
 				}}
@@ -80,17 +84,17 @@ const App = () => {
 			<div>
 				<h1>Posts - GET</h1>
 
-				{todosLoading ? (
+				{postsLoading ? (
 					<p>loading...</p>
 				) : (
 					<div>
-						{todosError && (
+						{postsError && (
 							<div>
-								<p>{todosError.message}</p>
+								<p>{postsError.message}</p>
 							</div>
 						)}
 						<div>
-							{todos && todos.map(todo => <h3 key={todo.id}>{todo.title}</h3>)}
+							{posts && posts.map(todo => <h3 key={todo.id}>{todo.title}</h3>)}
 						</div>
 					</div>
 				)}
