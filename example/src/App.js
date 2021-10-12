@@ -13,7 +13,7 @@ const App = () => {
 
 	const {
 		request: getPosts,
-		apiResponse: { data: posts },
+		response: { data: posts },
 		error: postsError,
 		isLoading: postsLoading,
 	} = useAxios(
@@ -26,7 +26,7 @@ const App = () => {
 
 	const {
 		request: createPost,
-		apiResponse: { data: id },
+		response: { data: id },
 		error: createError,
 		isLoading: createLoading,
 	} = useAxios(
