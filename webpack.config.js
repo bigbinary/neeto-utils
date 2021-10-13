@@ -10,7 +10,7 @@ module.exports = {
     rules: [
       {
         test: /\.md$/i,
-        use: "raw-loader",
+        use: "raw-loader"
       },
       {
         test: /\.(js|jsx)$/,
@@ -18,17 +18,17 @@ module.exports = {
         include: [path.resolve(__dirname, "lib")],
         use: [
           {
-            loader: "babel-loader",
-          },
-        ],
-      },
-    ],
+            loader: "babel-loader"
+          }
+        ]
+      }
+    ]
   },
   output: {
     path: __dirname + "/bundle",
     filename: "[name].js",
     library: "neeto-utils",
-    libraryTarget: "umd",
+    libraryTarget: "umd"
   },
-  plugins: [new PeerDepsExternalsPlugin()],
+  plugins: [new PeerDepsExternalsPlugin()]
 };
