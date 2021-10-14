@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-// import { Slugify } from "/bundle/main";
 import BasicTemplate from "./components/BasicTemplate";
 import { Slugify } from "../../lib/utils";
 import { useAxios, useDebounce, useOnClickOutside } from "../../lib/hooks";
