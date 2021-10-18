@@ -54,8 +54,44 @@ const truncate = (text = "", maxLength = 30) =>
 
 ### useDebounce
 
+```js
+const useDebounce = (value, delay = 800) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value]);
+
+  return debouncedValue;
+};
+```
 ### useOnClickOutside
 
+```js
+const useOnClickOutside = (ref, handler) => {
+  useEffect(() => {
+    const listener = (event) => {
+      // Do nothing if clicking ref's element or descendent elements
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
+    return () => {
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
+    };
+  }, [ref, handler]);
+};
+```
 ### useAxios
 
 `useAxios` is a custom react hook used to perform API requests. It helps reduce the duplication of the same code in the same file and across multiple files in a project.
