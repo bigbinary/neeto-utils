@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import BasicTemplate from "./components/BasicTemplate";
-import { Slugify } from "../../lib/utils";
+import { Slugify, truncate } from "../../lib/utils";
 import { useAxios, useDebounce, useOnClickOutside } from "../../lib/hooks";
 
 const App = () => {
@@ -9,7 +9,8 @@ const App = () => {
 
   useOnClickOutside(buttonRef, () => console.log("Clicked outside the button"));
   const debouncedValue = useDebounce(useDebounceValue, 2000);
-
+  const truncateSentence =
+    "This is a large sentence to test truncate function of length 74 characters";
   const {
     request: getPosts,
     response: { data: posts },
@@ -54,6 +55,11 @@ const App = () => {
         title="Slugify"
         input="This is Neeto Utils"
         output={Slugify("This is Neeto Utils")}
+      />
+      <BasicTemplate
+        title="Truncate"
+        input={truncateSentence}
+        output={truncate(truncateSentence)}
       />
       <BasicTemplate
         title="useOnClickOutside"
