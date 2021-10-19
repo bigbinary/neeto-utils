@@ -92,6 +92,23 @@ const useOnClickOutside = (ref, handler) => {
   }, [ref, handler]);
 };
 ```
+### useLocalStorage
+
+`useLocalStorage` is a custom react hook used to read and write a specific field in application's localstorage.
+
+```js
+const [localStorageValue, setLocalStorageValue] = useLocalStorage(
+  "useLocalStorage",
+  "BigBinary"
+);
+return (
+  <input
+    placeholder="Enter value"
+    value={localStorageValue}
+    onChange={(e) => setLocalStorageValue(e.target.value)}
+  />
+);
+```
 ### useAxios
 
 `useAxios` is a custom react hook used to perform API requests. It helps reduce the duplication of the same code in the same file and across multiple files in a project.

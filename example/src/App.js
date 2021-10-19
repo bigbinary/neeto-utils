@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import BasicTemplate from "./components/BasicTemplate";
 import { Slugify, truncate } from "../../lib/utils";
-import { useAxios, useDebounce, useOnClickOutside } from "../../lib/hooks";
+import { useAxios, useDebounce, useOnClickOutside, useLocalStorage } from "../../lib/hooks";
 
 const App = () => {
   const buttonRef = useRef();
@@ -11,6 +11,11 @@ const App = () => {
   const debouncedValue = useDebounce(useDebounceValue, 2000);
   const truncateSentence =
     "This is a large sentence to test truncate function of length 74 characters";
+  const [localStorageValue, setLocalStorageValue] = useLocalStorage(
+    "useLocalStorage",
+    "BigBinary"
+  );
+
   const {
     request: getPosts,
     response: { data: posts },
@@ -76,6 +81,17 @@ const App = () => {
           </button>
         }
         output="Check console"
+      />
+      <BasicTemplate
+        title="useLocalStorage"
+        input={
+          <input
+            placeholder="Enter value"
+            value={localStorageValue}
+            onChange={(e) => setLocalStorageValue(e.target.value)}
+          />
+        }
+        output="Check local storage with key 'useLocalStorage'"
       />
       <button
         onClick={() => getPosts()}
