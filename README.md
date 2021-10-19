@@ -48,7 +48,7 @@ const Slugify = string => {
 
 ```js
 const truncate = (text = "", maxLength = 30) =>
-  text.length > maxLength ? R.concat(R.slice(0, maxLength, text), "...") : text;
+  text.length > maxLength ? text.slice(0, maxLength - 3) + "..." : text;
 ```
 ## Hooks
 
