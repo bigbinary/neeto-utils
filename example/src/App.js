@@ -67,7 +67,7 @@ const App = () => {
         output={Slugify("This is Neeto Utils")}
       />
       <BasicTemplate
-        title="Humanize string"
+        title="Humanize"
         input={"this-is-neeto-utils"}
         output={humanize("this-is-neeto-utils")}
       />
