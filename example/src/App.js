@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import BasicTemplate from "./components/BasicTemplate";
-import { Slugify, truncate } from "../../lib/utils";
-import { useAxios, useDebounce, useOnClickOutside, useLocalStorage } from "../../lib/hooks";
+import { Slugify, truncate, humanize } from "../../lib/utils";
+import {
+  useAxios,
+  useDebounce,
+  useOnClickOutside,
+  useLocalStorage,
+} from "../../lib/hooks";
 
 const App = () => {
   const buttonRef = useRef();
@@ -20,11 +25,11 @@ const App = () => {
     request: getPosts,
     response: { data: posts },
     error: postsError,
-    isLoading: postsLoading
+    isLoading: postsLoading,
   } = useAxios(
     {
       method: "GET",
-      url: "https://jsonplaceholder.typicode.com/posts"
+      url: "https://jsonplaceholder.typicode.com/posts",
     },
     []
   );
@@ -33,11 +38,11 @@ const App = () => {
     request: createPost,
     response: { data: id },
     error: createError,
-    isLoading: createLoading
+    isLoading: createLoading,
   } = useAxios(
     {
       method: "POST",
-      url: "https://jsonplaceholder.typicode.com/posts"
+      url: "https://jsonplaceholder.typicode.com/posts",
     },
     ""
   );
@@ -60,6 +65,11 @@ const App = () => {
         title="Slugify"
         input="This is Neeto Utils"
         output={Slugify("This is Neeto Utils")}
+      />
+      <BasicTemplate
+        title="Humanize string"
+        input={"this-is-neeto-utils"}
+        output={humanize("this-is-neeto-utils")}
       />
       <BasicTemplate
         title="Truncate"
@@ -96,7 +106,7 @@ const App = () => {
       <button
         onClick={() => getPosts()}
         style={{
-          marginRight: "16px"
+          marginRight: "16px",
         }}
       >
         GET
@@ -115,7 +125,8 @@ const App = () => {
               </div>
             )}
             <div>
-              {posts && posts.map(todo => <h3 key={todo.id}>{todo.title}</h3>)}
+              {posts &&
+                posts.map((todo) => <h3 key={todo.id}>{todo.title}</h3>)}
             </div>
           </div>
         )}
