@@ -31,7 +31,7 @@ Running the `yarn build` command build a production bundle file.
 ### Slugify
 
 ```js
-const Slugify = string => {
+const Slugify = (string) => {
   return string
     .toString()
     .toLowerCase()
@@ -44,12 +44,32 @@ const Slugify = string => {
 };
 ```
 
+### Humanize
+
+```js
+const humanize = (string, capitalize = true) => {
+  let humanizedString = string
+    .toLowerCase()
+    .replace(/[_-]+/g, " ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+
+  if (capitalize) {
+    humanizedString =
+      humanizedString.charAt(0).toUpperCase() + humanizedString.slice(1);
+  }
+
+  return humanizedString;
+};
+```
+
 ### Truncate
 
 ```js
 const truncate = (text = "", maxLength = 30) =>
   text.length > maxLength ? text.slice(0, maxLength - 3) + "..." : text;
 ```
+
 ## Hooks
 
 ### useDebounce
@@ -71,6 +91,7 @@ const useDebounce = (value, delay = 800) => {
   return debouncedValue;
 };
 ```
+
 ### useOnClickOutside
 
 ```js
@@ -92,6 +113,7 @@ const useOnClickOutside = (ref, handler) => {
   }, [ref, handler]);
 };
 ```
+
 ### useLocalStorage
 
 `useLocalStorage` is a custom react hook used to read and write a specific field in application's localstorage.
@@ -109,6 +131,7 @@ return (
   />
 );
 ```
+
 ### useAxios
 
 `useAxios` is a custom react hook used to perform API requests. It helps reduce the duplication of the same code in the same file and across multiple files in a project.
